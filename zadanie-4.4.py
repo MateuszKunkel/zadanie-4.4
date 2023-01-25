@@ -23,8 +23,15 @@ if __name__ == "__main__":
     num1 = int(input("podaj pierwszą liczbę:"))
     num2 = int(input("podaj kolejną liczbę:"))
 
-    działania = ['Void', 'dodaję', 'odejmuję', 'mnożę', 'dzielę']
+    if choice < 1:
+        choice = 1
+    if choice > 4:
+        choice = 4
+    
+    print(choice)
 
-    logging.debug("zlecona czynność to: %s %s i %s" % (działania[choice], num1, num2))
+    działania = ['dodaję', 'odejmuję', 'mnożę', 'dzielę']
+
+    logging.debug("zlecona czynność to: %s %s i %s" % (działania[choice - 1], num1, num2))
 
     calculate(choice, num1, num2)
